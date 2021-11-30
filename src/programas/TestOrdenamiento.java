@@ -79,6 +79,17 @@ public class TestOrdenamiento {
             System.out.println("n="+ n);
             System.out.println(mob);
             System.out.println("tiempo= "+t+"ns");
+            System.out.println("");
+            
+            System.out.println("Ordenamiento por Radix:");
+            t1 = System.nanoTime();//<-- Star
+            DatosOrdenados mor = m.radixSort();//<-- Ordenamos
+            t2 = System.nanoTime(); //<-- Stop
+            t= t2 - t1;
+            System.out.println("n="+ n);
+            System.out.println(mob);
+            System.out.println("tiempo= "+t+"ns");
+           
     }
     
 }

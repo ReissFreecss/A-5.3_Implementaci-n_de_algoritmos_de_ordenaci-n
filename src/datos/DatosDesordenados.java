@@ -71,7 +71,27 @@ public class DatosDesordenados {
         // enviamos los datos ordenados a la clase DatosOrdenados colocamos los datos que estan en el arreglo en la clase datos ordenados
         return new DatosOrdenados(arreglo);
     }
-     
+         public DatosOrdenados radixSort(){
+        int [] arreglo = this.getCopiaValores();
+        int n = arreglo.length;
+        int cont = 0;
+        int ci = 0;
+        for (int i=0; i < n-1; i++){
+            for (int j=0; j < n-i-1; j++){
+                cont++;
+                if (arreglo[j] > arreglo[j+1]){
+                    // intercambiar: swap
+                    ci++;
+                    int temporal = arreglo[j];
+                    arreglo[j] = arreglo[j+1];
+                    arreglo[j+1] = temporal;
+                }
+            }
+        }
+        System.out.println("BS-comparaciones = " + cont);
+        System.out.println("BS-intercambios = " + ci);
+        return new DatosOrdenados(arreglo);
+    }
      public DatosOrdenados ShellSort(){
         
         // obtener una copia de los datos desordenados
